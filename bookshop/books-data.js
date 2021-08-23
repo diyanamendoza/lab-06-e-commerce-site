@@ -44,5 +44,13 @@ export const books = [
         price: 18.40
 
     },
-    
+    {
+        id: 6,
+        name: 'The Fifth Season',
+        image: `../assets/6.jpg`,
+        description: 'At the end of the world, a woman must hide her secret power and find her kidnapped daughter in this intricate and extraordinary Hugo Award winning novel of power, oppression, and revolution.',
+        category: 'N.K. Jemisin',
+        price: 15.63
+
+    },
 ];

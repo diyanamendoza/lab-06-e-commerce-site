@@ -3,6 +3,7 @@ html {
     padding: 0;
     width: 100%;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -26,6 +27,8 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 40px;
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
@@ -35,6 +38,7 @@ h2 {
 p {
     margin-top: 0px;
 }
+
 
 .book-cover {
     border-radius: 5px;
@@ -72,6 +76,9 @@ p {
     font-weight: bolder;
     font-size: 1em;
     cursor: pointer;
+    display: flex;
+    align-self: center;
+    justify-content: center;
 }
 
 .add:active {
