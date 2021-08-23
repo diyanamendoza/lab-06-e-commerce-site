@@ -18,10 +18,14 @@ export function renderBooks(book) {
     bookTitle.textContent = book.name;
     categoryAuthorP.textContent = book.category;
     descriptionP.textContent = book.description;
-    priceP.textContent = `$${book.price}`;
+    priceP.textContent = `$${book.price.toFixed(2)}`;
     addButton.textContent = book.id;
 
     bookDiv.append(imgCover, bookTitle, categoryAuthorP, descriptionP, priceP, addButton);
+
+    addButton.addEventListener('click', () => {
+        alert(`Yay! ${book.name} will be added to your cart.`);
+    })
 
     return bookDiv;
 }

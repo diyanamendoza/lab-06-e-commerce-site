@@ -32,7 +32,7 @@ export const books = [
         image: `../assets/4.jpg`,
         description: 'Darkness blooms this new contemporary fantasy about a girl with a unique and deadly power.',
         category: 'Kalynn Bayron',
-        price: 10.11
+        price: 10.10
 
     },
     {
