@@ -1,0 +1,67 @@
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bitter', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header {
+    color: black;
+    padding-bottom: 25px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.book-cover {
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px;
+    width: 200px;
+    display: block;
+    margin: auto;
+    
+}
+
+.product {
+    width: 250px;
+    border: .5px solid grey;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.price {
+    font-weight: bolder;
+}
+
+.add {
+    border: none;
+    background-color: darkslateblue;
+    border-radius: 20px;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    display: block;
+    margin: auto;
+    font-family: 'Bitter', serif;
+    font-weight: bolder;
+    font-size: 1em;
+}
+
+.category-author {
+    color:darkslateblue;
+}
