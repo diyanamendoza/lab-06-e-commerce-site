@@ -71,8 +71,14 @@ p {
     font-family: 'Bitter', serif;
     font-weight: bolder;
     font-size: 1em;
+    cursor: pointer;
 }
 
+.add:active {
+    background-color: white;
+    color:darkslateblue;
+    border: 1px solid darkslateblue;
+}
 .category-author {
     color:darkslateblue;
 }
