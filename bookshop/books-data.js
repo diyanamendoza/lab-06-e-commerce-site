@@ -12,7 +12,7 @@ export const books = [
         id: 2,
         name: 'The Unbroken',
         image: `../assets/2.jpg`,
-        description: 'On the far outreaches of a crumbling desert empire, two women--a princess and a soldier--will haggle over the price of a nation in this richly imagined, breath-taking sapphic epic fantasy filled with rebellion, espionage, and assassinations.',
+        description: 'On the far outreaches of a crumbling desert empire, two women--a princess and a soldier--haggle over the price of a nation in this epic fantasy filled with rebellion, espionage, and assassinations.',
         category: 'C. L. Clark',
         price: 15.63
 
