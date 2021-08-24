@@ -15,7 +15,6 @@ export function calcOrderTotal(cartArray, productArray) {
     let itemPrice = 0;
     for (let item of cartArray) {
         itemPrice = (findById(productArray, item.id)).price;
-        console.log(itemPrice);
         orderTotal = orderTotal + (calcItemTotal(item.quantity, itemPrice));
     }
     return Math.round(orderTotal * 100) / 100;

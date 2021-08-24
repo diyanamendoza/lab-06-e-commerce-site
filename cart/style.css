@@ -112,7 +112,11 @@ td {
 
 .total {
     font-weight: bolder;
-    /* border-top: 1px solid lightgrey; */
+    border-top: 1px solid lightgrey;
+    text-align: left;
+}
+
+.total-label {
     text-align: right;
-    width: 100%;
+    padding-right: 10px;
 }
