@@ -9,3 +9,14 @@ export function findById(productArray, id) {
 export function calcItemTotal(quantity, price) {
     return quantity * price; 
 }
+
+export function calcOrderTotal(cartArray, productArray) {
+    let orderTotal = 0;
+    let itemPrice = 0;
+    for (let item of cartArray) {
+        itemPrice = (findById(productArray, item.id)).price;
+        console.log(itemPrice);
+        orderTotal = orderTotal + (calcItemTotal(item.quantity, itemPrice));
+    }
+    return Math.round(orderTotal * 100) / 100;
+}
