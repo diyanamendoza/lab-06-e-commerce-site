@@ -14,9 +14,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    padding: 0;
+    margin: 0;
+    --footer-height: 80px;
 }
-
+s
 header {
     color: black;
     padding-bottom: 25px;
@@ -29,6 +31,8 @@ main {
     gap: 40px;
     justify-content: center;
     align-items: center;
+    padding: 60px;
+    margin-bottom: calc(var(--footer-height))
 }
 
 h2 {
@@ -88,4 +92,23 @@ p {
 }
 .category-author {
     color:darkslateblue;
+}
+
+footer {
+    border-top: 1px solid darkslateblue;
+    width: 100%;
+}
+
+blockquote {
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 1.5em;
+    text-align: right;
+    margin: 0;
+}
+figcaption {
+    margin-top: .6em;
+    font-size: 1em;
+    text-align: right;
+    padding-bottom: 10px;
+    color: darkslateblue;
 }

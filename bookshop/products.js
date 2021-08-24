@@ -7,3 +7,4 @@ for (let book of books) {
     const productDiv = renderBooks(book);
     productsContainer.append(productDiv);
 }
+
