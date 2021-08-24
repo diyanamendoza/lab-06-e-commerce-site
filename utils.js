@@ -5,3 +5,7 @@ export function findById(productArray, id) {
         }
     }
 }
+
+export function calcItemTotal(quantity, price) {
+    return quantity * price; 
+}

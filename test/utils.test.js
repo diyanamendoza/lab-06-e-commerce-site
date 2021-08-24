@@ -1,10 +1,23 @@
 // IMPORT MODULES under test here:
 import { renderBooks } from '../bookshop/render-utils.js';
 // import { renderTableBody } from '../cart/render-table-body.js';
-import { findById } from '../utils.js';
+import { findById, calcItemTotal } from '../utils.js';
 import { books } from '../bookshop/books-data.js'
 
 const test = QUnit.test;
+
+test('calcItemTotal should take in quantity and price and return the product', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = 30;
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = calcItemTotal(3, 10);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
+});
 
 test('findById should take in an id and return the correct product object data from the specified array of objects', (expect) => {
     //Arrange
