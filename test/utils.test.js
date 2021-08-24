@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { renderBooks } from '../bookshop/render-utils.js';
-// import { renderTableBody } from '../cart/render-table-body.js';
+import { renderTableBody } from '../cart/render-table-body.js';
 import { findById, calcItemTotal } from '../utils.js';
 import { books } from '../bookshop/books-data.js'
 
@@ -59,17 +59,17 @@ test('renderBooks should take in a game and return the correct HTML elements', (
     expect.equal(actual.outerHTML, expected);
 });
 
-// test('renderTableBody should take in cartItem and return the corret HTML elements', (expect) => {
-//     //Arrange
-//     // Set up your arguments and expectations
-//     const expected = `<tr><td class="item-title">The Unbroken</td><td class="item-quantity">2</td><td class="item-price-total">$31.26</td></tr>`;
+test('renderTableBody should take in cartItem and return the corret HTML elements', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = `<tr><td class="item-title">The Unbroken</td><td class="item-quantity">2</td><td class="item-price-total">$31.26</td></tr>`;
 
-//     // Call the function you're testing and set the result to a const
-//     const actual = renderTableBody(
-//         {id: 2, quantity: 2},
-//         );
+    // Call the function you're testing and set the result to a const
+    const actual = renderTableBody(
+        {id: 2, quantity: 2},
+        );
 
-//     //Expect
-//     // Make assertions about what is expected versus the actual result
-//     expect.equal(actual.outerHTML, expected);
-// });
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual.outerHTML, expected);
+});

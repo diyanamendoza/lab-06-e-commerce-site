@@ -1,5 +1,6 @@
 import { books } from '../bookshop/books-data.js';
 import { findById } from '../utils.js';
+import { calcItemTotal } from '../utils.js';
 
 export function renderTableBody(cartItem) {
     //Create parent for table body
@@ -21,7 +22,10 @@ export function renderTableBody(cartItem) {
     //Get book object data ready
     const item = findById(books, cartItem.id);
     //Get the approp data into the elements
-    cartItemTitle.textContent = 
-    
+    cartItemTitle.textContent = item.name;
+    cartItemQuantity.textContent = cartItem.quantity;
+    cartPerItemTotal.textContent = (calcItemTotal(cartItem.quantity, item.price)).toLocaleString('en-US',
+    {style: 'currency', currency: 'USD'});
+
     return cartTableTr;
 }
