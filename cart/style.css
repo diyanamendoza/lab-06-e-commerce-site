@@ -1,0 +1,118 @@
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bitter', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    --footer-height: 80px;
+}
+
+header {
+    color: black;
+    padding-bottom: 25px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 60px;
+    margin-bottom: calc(var(--footer-height))
+}
+
+h2 {
+    margin-bottom: 0px;
+}
+
+p {
+    margin-top: 0px;
+}
+
+
+.book-cover {
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px;
+    width: 200px; 
+    display: flex;
+    align-self: center;
+}
+
+.product {
+    width: 250px;
+    border: .5px solid grey;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    height: 700px;
+}
+
+.place-order {
+    border: none;
+    background-color: darkslateblue;
+    border-radius: 20px;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    font-family: 'Bitter', serif;
+    font-weight: bolder;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+
+}
+
+.place-order:active {
+    background-color: white;
+    color:darkslateblue;
+    border: 1px solid darkslateblue;
+}
+.category-author {
+    color:darkslateblue;
+}
+
+table.cartTable {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+
+th {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+}
+
+td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.item {
+    width: 400px;
+}
+
+.quantity, .price {
+    width: 100px;
+}
+
+.total {
+    font-weight: bolder;
+    /* border-top: 1px solid lightgrey; */
+    text-align: right;
+    width: 100%;
+}

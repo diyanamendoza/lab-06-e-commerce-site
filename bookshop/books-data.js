@@ -30,7 +30,7 @@ export const books = [
         id: 4,
         name: 'This Poison Heart',
         image: `../assets/4.jpg`,
-        description: 'Darkness blooms this new contemporary fantasy about a girl with a unique and deadly power.',
+        description: 'Darkness blooms in this new contemporary fantasy about a girl with a unique and deadly power.',
         category: 'Kalynn Bayron',
         price: 10.10
 
