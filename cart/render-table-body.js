@@ -1,0 +1,27 @@
+import { books } from '../bookshop/books-data.js';
+import { findById } from '../utils.js';
+
+export function renderTableBody(cartItem) {
+    //Create parent for table body
+    const cartTableTr = document.createElement('tr');
+
+    //Create table children
+    const cartItemTitle = document.createElement('td');
+    const cartItemQuantity = document.createElement('td');
+    const cartPerItemTotal = document.createElement('td');
+
+    //Append children to parent
+    cartTableTr.append(cartItemTitle, cartItemQuantity, cartPerItemTotal);
+
+    //Give 'em classy ish
+    cartItemTitle.classList.add('item-title');
+    cartItemQuantity.classList.add('item-quantity');
+    cartPerItemTotal.classList.add('item-price-total');
+
+    //Get book object data ready
+    const item = findById(books, cartItem.id);
+    //Get the approp data into the elements
+    cartItemTitle.textContent = 
+    
+    return cartTableTr;
+}
