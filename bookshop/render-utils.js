@@ -21,7 +21,8 @@ export function renderBooks(book) {
     categoryAuthorP.textContent = book.category;
     descriptionP.textContent = book.description;
     priceP.textContent = `$${book.price.toFixed(2)}`;
-    addButton.textContent = book.id;
+    addButton.value = book.id;
+    addButton.textContent = 'Add to cart';
 
     bookDiv.append(imgCover, bookTitle, categoryAuthorP, descriptionP, priceP, addButton);
 

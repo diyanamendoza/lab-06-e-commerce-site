@@ -1,6 +1,6 @@
 import { books } from "../bookshop/books-data.js";
 import { calcOrderTotal } from "../utils.js";
-import { getCart } from "./cart-api.js";
+import { clearCart, getCart } from "./cart-api.js";
 // import { cartItems } from "./cart-data.js"; 
 import { renderTableBody } from "./render-table-body.js";
 
@@ -20,3 +20,12 @@ const orderTotal = document.getElementById('total');
 
 orderTotal.textContent = (calcOrderTotal(cartItems, books)).toLocaleString('en-US',
 {style: 'currency', currency: 'USD'});
+
+// Place order button shenanigans
+const placeOrder = document.getElementById('place-order');
+
+if (!cartItems) { placeOrder.disabled = true; }
+
+placeOrder.addEventListener('click', () => {
+    clearCart();
+});

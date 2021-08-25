@@ -43,5 +43,5 @@ export function clearCart() {
 
     localStorage.removeItem('CART');
     
-    window.location = './bookshop/shop.html';
+    window.location = '../bookshop/shop.html';
 }
