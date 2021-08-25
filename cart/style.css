@@ -60,6 +60,13 @@ p {
     height: 700px;
 }
 
+#buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    gap: 20px;
+}
+
 .place-order {
     border: none;
     background-color: darkslateblue;
@@ -71,17 +78,27 @@ p {
     font-weight: bolder;
     font-size: 1em;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-
 }
 
-.place-order:active {
+.place-order:active, .continue-shopping:active {
     background-color: white;
     color:darkslateblue;
     border: 1px solid darkslateblue;
 }
+
+.continue-shopping {
+    border: none;
+    background-color:midnightblue;
+    border-radius: 20px;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    font-family: 'Bitter', serif;
+    font-weight: bolder;
+    font-size: 1em;
+    cursor: pointer;
+}
+
 .category-author {
     color:darkslateblue;
 }
