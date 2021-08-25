@@ -1,3 +1,7 @@
+import { addToCart } from "../cart/cart-api.js";
+import { findById } from "../utils.js";
+
+
 export function renderBooks(book) {
     const bookDiv = document.createElement('div');
     const imgCover = document.createElement('img');
@@ -25,6 +29,8 @@ export function renderBooks(book) {
 
     addButton.addEventListener('click', () => {
         alert(`Yay! ${book.name} will be added to your cart.`);
+        
+        addToCart(book.id);
     })
 
     return bookDiv;

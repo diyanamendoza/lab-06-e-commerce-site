@@ -1,6 +1,6 @@
 import { books } from "../bookshop/books-data.js";
 import { calcOrderTotal } from "../utils.js";
-import { cartItems } from "./cart-data.js";
+import { cartItems } from "./cart-data.js"; 
 import { renderTableBody } from "./render-table-body.js";
 
 // Get parent element where the table is going inside

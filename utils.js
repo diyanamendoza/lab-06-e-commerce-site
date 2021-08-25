@@ -19,3 +19,4 @@ export function calcOrderTotal(cartArray, productArray) {
     }
     return Math.round(orderTotal * 100) / 100;
 }
+
