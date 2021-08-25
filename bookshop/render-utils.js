@@ -1,6 +1,4 @@
 import { addToCart } from "../cart/cart-api.js";
-import { findById } from "../utils.js";
-
 
 export function renderBooks(book) {
     const bookDiv = document.createElement('div');

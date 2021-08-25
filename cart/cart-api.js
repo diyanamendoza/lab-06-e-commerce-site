@@ -20,8 +20,7 @@ export function getCart() {
 
 // Add and set
 export function addToCart(someId) {
-    currentCart = getCart();
-    
+    const currentCart = getCart();
     const itemInCart = findById(currentCart, someId);
     if (itemInCart) {
         itemInCart.quantity++;
