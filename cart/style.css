@@ -117,6 +117,7 @@ td {
 }
 
 .total-label {
+    font-weight: bolder;
     text-align: right;
     padding-right: 10px;
 }
