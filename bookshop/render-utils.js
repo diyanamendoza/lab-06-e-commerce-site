@@ -8,6 +8,17 @@ export function renderBooks(book) {
     const descriptionP = document.createElement('p');
     const priceP = document.createElement('p');
     const addButton = document.createElement('button');
+    const dropDown = document.createElement('select');
+
+    // dropDown stuff
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    for (let number of numbers) {
+        const option = document.createElement('option');
+        option.textContent = number;
+        option.value = number;
+        dropDown.appendChild(option);
+    }
+
 
     bookDiv.classList.add('product');
     imgCover.classList.add('book-cover');
@@ -24,12 +35,12 @@ export function renderBooks(book) {
     addButton.value = book.id;
     addButton.textContent = 'Add to cart';
 
-    bookDiv.append(imgCover, bookTitle, categoryAuthorP, descriptionP, priceP, addButton);
+    bookDiv.append(imgCover, bookTitle, categoryAuthorP, descriptionP, priceP, dropDown, addButton);
 
     addButton.addEventListener('click', () => {
         alert(`Yay! ${book.name} will be added to your cart.`);
-        
-        addToCart(book.id);
+        let selectedQuantity = Number(dropDown.value);
+        addToCart(book.id, selectedQuantity);
     })
 
     return bookDiv;

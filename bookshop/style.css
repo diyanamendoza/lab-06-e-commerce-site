@@ -18,7 +18,7 @@ body {
     margin: 0;
     --footer-height: 80px;
 }
-s
+
 header {
     color: black;
     padding-bottom: 25px;
@@ -60,7 +60,7 @@ p {
     display: flex;
     flex-direction:column;
     align-items: flex-start;
-    height: 700px;
+    height: 730px;
 }
 
 .price {
@@ -111,4 +111,8 @@ figcaption {
     text-align: right;
     padding-bottom: 10px;
     color: darkslateblue;
+}
+
+select {
+    margin-bottom: 10px;
 }

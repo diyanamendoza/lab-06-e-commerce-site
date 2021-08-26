@@ -19,14 +19,14 @@ export function getCart() {
 }
 
 // Add and set
-export function addToCart(someId) {
+export function addToCart(someId, selectedQuantity) {
     const currentCart = getCart();
     const itemInCart = findById(currentCart, someId);
     if (itemInCart) {
-        itemInCart.quantity++;
+        itemInCart.quantity = itemInCart.quantity + selectedQuantity;
     }
     else {
-        const newItem = { id: someId, quantity: 1 };
+        const newItem = { id: someId, quantity: selectedQuantity };
         currentCart.push(newItem);
     }
 

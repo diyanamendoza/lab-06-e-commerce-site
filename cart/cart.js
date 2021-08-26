@@ -24,8 +24,18 @@ orderTotal.textContent = (calcOrderTotal(cartItems, books)).toLocaleString('en-U
 // Place order button shenanigans
 const placeOrder = document.getElementById('place-order');
 
-if (!cartItems) { placeOrder.disabled = true; }
+
+if (cartItems.length === 0) { 
+    placeOrder.disabled = true;
+    placeOrder.style.backgroundColor = "gray"; 
+};
 
 placeOrder.addEventListener('click', () => {
-    clearCart();
+    clearCart()
+});
+
+// Continue shopping button shenanigans
+const continueShopping = document.getElementById('continue-shopping');
+continueShopping.addEventListener('click', () => {
+    window.location = '../bookshop/shop.html';
 });
