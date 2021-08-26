@@ -56,7 +56,7 @@ test('findById should take in an id and return the correct product object data f
 test('renderBooks should take in a game and return the correct HTML elements', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<div class="product"><img class="book-cover" src="../assets/1.jpg"><h2>The Killing Moon</h2><h3 class="category-author">N.K. Jemisin</h3><p class="description">Assassin priests, mad kings, and the goddess of death collide in the first book of the Dreamblood Duology by NYT bestselling and three time Hugo-Award winning author N. K. Jemisin.</p><p class="price">$15.63</p><button class="add">1</button></div>`;
+    const expected = `<div class=\"product\"><img class=\"book-cover\" src=\"../assets/1.jpg\"><h2>The Killing Moon</h2><h3 class=\"category-author\">N.K. Jemisin</h3><p class=\"description\">Assassin priests, mad kings, and the goddess of death collide in the first book of the Dreamblood Duology by NYT bestselling and three time Hugo-Award winning author N. K. Jemisin.</p><p class=\"price\">$15.63</p><select><option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7</option><option value=\"8\">8</option><option value=\"9\">9</option><option value=\"10\">10</option></select><button class=\"add\" value=\"1\">Add to cart</button></div>`;
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = renderBooks({
