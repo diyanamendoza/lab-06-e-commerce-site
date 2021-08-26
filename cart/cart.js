@@ -23,11 +23,12 @@ orderTotal.textContent = (calcOrderTotal(cartItems, books)).toLocaleString('en-U
 
 // Place order button shenanigans
 const placeOrder = document.getElementById('place-order');
-
+const empty = document.getElementById('if-empty');
 
 if (cartItems.length === 0) { 
     placeOrder.disabled = true;
     placeOrder.style.backgroundColor = "gray"; 
+    empty.textContent = ('Your cart is an empty valley of sadness.');
 };
 
 placeOrder.addEventListener('click', () => {
