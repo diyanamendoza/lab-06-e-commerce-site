@@ -1,5 +1,6 @@
-import { addProduct } from "../utils.js";
+import { addProduct, renderInventory } from "../utils.js";
 
+// getting data from form
 const form = document.getElementById('admin-form');
 
 form.addEventListener('submit', (event) => {
@@ -18,4 +19,10 @@ form.addEventListener('submit', (event) => {
     
 
     addProduct(book);
+
+    window.location = '../bookshop/shop.html';
 });
+
+// render inventory with buttons
+
+renderInventory();

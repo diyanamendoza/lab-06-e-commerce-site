@@ -29,7 +29,7 @@ export const getInventory = () => {
     // pull from local storage
     let bookInventory = localStorage.getItem('BOOKS');
 
-    if (!bookInventory) {
+    if (!bookInventory || bookInventory === '[]') {
         // if no books yet in local storage, get the books-data array ready to set in local storage
         bookInventory = JSON.stringify(books);
         // now set it
@@ -46,12 +46,12 @@ export function addProduct(newProduct) {
     // get existing inventory
     let currentInventory = getInventory();
 
-    console.log(currentInventory);
+    // console.log(currentInventory);
 
     // push new product to inventory and stringify it so you can set
 
-    console.log(newProduct);
-    console.log([...currentInventory, newProduct]);
+    // console.log(newProduct);
+    // console.log([...currentInventory, newProduct]);
 
     //originally had this, but the push was returning the array length
     // const newInventory = JSON.stringify(currentInventory.push(newProduct));
@@ -59,8 +59,50 @@ export function addProduct(newProduct) {
     //had to use spread instead to get it working/passing test
     const newInventory = JSON.stringify([...currentInventory, newProduct]);
 
-    console.log(newInventory);
+    // console.log(newInventory);
 
     // set new inventory in LS
     localStorage.setItem('BOOKS', newInventory);
 }
+
+export function removeProduct(productId) {
+    let currentInventory = getInventory();
+    let productToRemove = findById(currentInventory, productId);
+    let index = currentInventory.indexOf(productToRemove);
+    currentInventory.splice(index, 1);
+
+    // get updatedInventory ready to set
+    currentInventory = JSON.stringify(currentInventory);
+    // set updatedInventory
+    localStorage.setItem('BOOKS', currentInventory);
+
+    renderInventory();
+
+}
+
+export function renderInventory () {
+    let inventory = getInventory();
+    const list = document.getElementById('inventory-list');
+    list.textContent = '';
+
+    console.log(inventory);
+    for (let item of inventory) {
+        const removeButton = document.createElement('button');
+        const li = document.createElement('li');
+
+        li.textContent = `${item.name} by ${item.category}`;
+        li.classList.add('remove-li');
+        removeButton.value = `${item.id}`;
+        removeButton.textContent = 'Remove';
+        removeButton.classList.add('remove-button');
+    
+        removeButton.addEventListener('click', () => {
+            confirm(`Are you sure you'd like to remove ${item.title} from the inventory?`);
+            if (confirm) {
+                removeProduct(item.id);
+            }
+        });
+    
+        list.append(removeButton, li);
+    }
+    };

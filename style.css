@@ -41,8 +41,12 @@ label {
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 20px;
+    margin-left: 0;
+}
+
+label {
+    margin: 0;
 }
 
 #admin-nav {
@@ -65,13 +69,36 @@ li.admin > a {
     cursor: pointer;
 }
 
-#submit-button {
+#submit-button, .remove-button {
     font-family: 'Bitter', serif;
     font-size: 1em;
     cursor: pointer;
 }
 
+#input-description {
+    display: flex;
+    flex-direction: column;
+}
+
 #description {
-    width: 200px;
-    height: 100px;
+    width: 100%;
+    height: 50px;
+}
+
+#column-2 {
+    border-left: 1px dotted black;
+    padding-left: 40px;
+}
+
+#inventory-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 30px;
+    column-gap: 10px;
+    padding-left: 0;
+}
+
+li.remove-li {
+    border-bottom: 1px dotted black;
 }
