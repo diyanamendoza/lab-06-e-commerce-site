@@ -40,3 +40,23 @@ export const getInventory = () => {
     const parsedBookInventory = JSON.parse(bookInventory);
     return parsedBookInventory;
 }
+
+// addProduct takes a product object as a parameter and puts that product into the correct place in localStorage
+export function addProduct(newProduct) {
+    // get existing inventory
+    let currentInventory = getInventory();
+
+    console.log(currentInventory);
+
+    // push new product to inventory and stringify it so you can set
+
+    console.log(newProduct);
+    console.log([...currentInventory, newProduct]);
+
+    const newInventory = JSON.stringify([...currentInventory, newProduct]);
+
+    console.log(newInventory);
+    
+    // set new inventory in LS
+    localStorage.setItem('BOOKS', newInventory);
+}

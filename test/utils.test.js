@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 import { renderBooks } from '../bookshop/render-utils.js';
 import { renderTableBody } from '../cart/render-table-body.js';
-import { findById, calcItemTotal, calcOrderTotal } from '../utils.js';
+import { findById, calcItemTotal, calcOrderTotal, addProduct, getInventory } from '../utils.js';
 import { books } from '../bookshop/books-data.js'
 import { cartItems } from '../cart/cart-data.js';
 
@@ -86,4 +86,20 @@ test('renderTableBody should take in cartItem and return the corret HTML element
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
+});
+
+test('addProduct should take in a product object and add it to the product inventory in local storage', (expect) => {
+    const inventoryBefore = [ {id: 7, title: 'Book 1'} ];
+    const inventoryAfter = [ {id: 7, title: 'Book 1'}, {id: 8, title: 'Book 2'} ];
+    const newBook = {id: 8, title: 'Book 2'};
+    
+    const stringInventory = JSON.stringify(inventoryBefore);
+    localStorage.setItem('BOOKS', stringInventory);
+
+    addProduct(newBook);
+    const stringInventoryAfter = localStorage.getItem('BOOKS');
+    const actual = JSON.parse(stringInventoryAfter);
+
+    expect.deepEqual(actual, inventoryAfter);
+
 });
