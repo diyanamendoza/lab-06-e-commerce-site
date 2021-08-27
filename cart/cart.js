@@ -1,5 +1,5 @@
-import { books } from "../bookshop/books-data.js";
-import { calcOrderTotal } from "../utils.js";
+// import { books } from "../bookshop/books-data.js";
+import { calcOrderTotal, getInventory } from "../utils.js";
 import { clearCart, getCart } from "./cart-api.js";
 // import { cartItems } from "./cart-data.js"; 
 import { renderTableBody } from "./render-table-body.js";
@@ -18,7 +18,10 @@ for (let item of cartItems) {
 // Get element where order total should go
 const orderTotal = document.getElementById('total');
 
-orderTotal.textContent = (calcOrderTotal(cartItems, books)).toLocaleString('en-US',
+// get inventory to be able to cross-reference for pricing
+const inventory = getInventory();
+
+orderTotal.textContent = (calcOrderTotal(cartItems, inventory)).toLocaleString('en-US',
 {style: 'currency', currency: 'USD'});
 
 // Place order button shenanigans

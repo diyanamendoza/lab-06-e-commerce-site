@@ -53,10 +53,14 @@ export function addProduct(newProduct) {
     console.log(newProduct);
     console.log([...currentInventory, newProduct]);
 
+    //originally had this, but the push was returning the array length
+    // const newInventory = JSON.stringify(currentInventory.push(newProduct));
+
+    //had to use spread instead to get it working/passing test
     const newInventory = JSON.stringify([...currentInventory, newProduct]);
 
     console.log(newInventory);
-    
+
     // set new inventory in LS
     localStorage.setItem('BOOKS', newInventory);
 }

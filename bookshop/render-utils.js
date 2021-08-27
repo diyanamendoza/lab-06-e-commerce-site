@@ -31,7 +31,10 @@ export function renderBooks(book) {
     bookTitle.textContent = book.name;
     categoryAuthorP.textContent = book.category;
     descriptionP.textContent = book.description;
-    priceP.textContent = `$${book.price.toFixed(2)}`;
+    priceP.textContent = book.price.toLocaleString('en-US',
+    {style: 'currency', currency: 'USD'});
+
+    console.log(priceP.textContent);
     addButton.value = book.id;
     addButton.textContent = 'Add to cart';
 
