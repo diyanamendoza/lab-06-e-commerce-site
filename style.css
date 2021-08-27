@@ -13,6 +13,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
 
 }
 
@@ -30,4 +31,42 @@ main {
 
 a {
     font-size: 1.5em;
+}
+
+/* admin page */
+label {
+    margin: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#admin-nav {
+    background-color:darkslategrey;
+    width: 100%;
+}
+
+#admin-ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-right: 50px;
+    list-style: none;
+    font-size: .8em;
+}
+
+li.admin > a {
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#submit-button {
+    font-family: 'Bitter', serif;
+    font-size: 1em;
+    cursor: pointer;
 }
