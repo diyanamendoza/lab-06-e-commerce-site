@@ -9,6 +9,16 @@ export function findById(productArray, id) {
     }
 }
 
+export function findByKey(bookArray, key, desiredValue) {
+    let newArray = [];
+    for (let book of bookArray) {
+        if(book[`${key}`] === desiredValue) {
+            newArray.push(book);
+        }
+    }
+    return newArray;
+}
+
 export function calcItemTotal(quantity, price) {
     return quantity * price; 
 }
@@ -85,7 +95,6 @@ export function renderInventory () {
     const list = document.getElementById('inventory-list');
     list.textContent = '';
 
-    console.log(inventory);
     for (let item of inventory) {
         const removeButton = document.createElement('button');
         const li = document.createElement('li');

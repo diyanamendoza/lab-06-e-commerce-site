@@ -49,6 +49,11 @@ label {
     margin: 0;
 }
 
+input {
+    border-style:none;
+    border: 1px solid grey;
+}
+
 #admin-nav {
     background-color:darkslategrey;
     width: 100%;

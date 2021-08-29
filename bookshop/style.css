@@ -114,5 +114,25 @@ figcaption {
 }
 
 select {
-    margin-bottom: 10px;
+    font-size: .9em;
+    font-family: 'Bitter', serif;
+    height: 30px;
+}
+
+.filter-button {
+    font-family: 'Bitter', serif;
+    background-color: darkslateblue;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    font-size: .9em;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+}
+
+#author-select {
+    display: flex;
+    gap: 10px;
+    align-items:baseline;
 }
