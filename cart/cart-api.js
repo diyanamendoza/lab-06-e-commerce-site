@@ -1,5 +1,4 @@
 import { findById } from "../utils.js";
-
 // Set 
 export function setCart(cartArray) {
     const cartToSet = JSON.stringify(cartArray);
@@ -7,15 +6,20 @@ export function setCart(cartArray) {
 }
 
 
-// Get 
-export function getCart() {
-    const unparsedCart = localStorage.getItem('CART');
-    if (!unparsedCart) {
-        return [];
-    }
+// Get original
+// export function getCart() {
+//     const unparsedCart = localStorage.getItem('CART');
+//     if (!unparsedCart) {
+//         return [];
+//     }
 
-    const parsedCart = JSON.parse(unparsedCart);
-    return parsedCart;
+//     const parsedCart = JSON.parse(unparsedCart);
+//     return parsedCart;
+// }
+
+// Get refactored
+export function getCart() {
+    return JSON.parse(localStorage.getItem('CART') || '[]');
 }
 
 // Add and set
@@ -32,8 +36,6 @@ export function addToCart(someId, selectedQuantity) {
 
     setCart(currentCart);
 }
-
-
 
 // Alert, clear, bring home
 export function clearCart() {

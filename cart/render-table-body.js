@@ -1,5 +1,5 @@
-import { books } from '../bookshop/books-data.js';
-import { findById } from '../utils.js';
+// import { books } from '../bookshop/books-data.js';
+import { findById, getInventory } from '../utils.js';
 import { calcItemTotal } from '../utils.js';
 
 export function renderTableBody(cartItem) {
@@ -20,7 +20,8 @@ export function renderTableBody(cartItem) {
     cartPerItemTotal.classList.add('item-price-total');
 
     //Get book object data ready
-    const item = findById(books, cartItem.id);
+    const inventory = getInventory();
+    const item = findById(inventory, cartItem.id);
     //Get the approp data into the elements
     cartItemTitle.textContent = item.name;
     cartItemQuantity.textContent = cartItem.quantity;

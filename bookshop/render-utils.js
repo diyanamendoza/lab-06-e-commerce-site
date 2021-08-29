@@ -1,4 +1,5 @@
 import { addToCart } from "../cart/cart-api.js";
+import { getInventory } from "../utils.js";
 
 export function renderBooks(book) {
     const bookDiv = document.createElement('div');
@@ -31,7 +32,9 @@ export function renderBooks(book) {
     bookTitle.textContent = book.name;
     categoryAuthorP.textContent = book.category;
     descriptionP.textContent = book.description;
-    priceP.textContent = `$${book.price.toFixed(2)}`;
+    priceP.textContent = book.price.toLocaleString('en-US',
+    {style: 'currency', currency: 'USD'});
+
     addButton.value = book.id;
     addButton.textContent = 'Add to cart';
 
@@ -44,4 +47,41 @@ export function renderBooks(book) {
     })
 
     return bookDiv;
+}
+
+export function renderAuthorSelect () {
+    const authorSelectDiv = document.getElementById('author-select');
+    const authorSelect = document.createElement('select');
+    const inventory = getInventory();
+
+    let authorArray = [];
+    for (let item of inventory) {
+        authorArray.push(item.category);
+    }
+
+    let uniqueAuthorArray = ['All'];
+    authorArray.forEach((author) => {
+        if (!uniqueAuthorArray.includes(author)) {
+            uniqueAuthorArray.push(author);
+        }
+    });
+
+    for (let author of uniqueAuthorArray) {
+        const option = document.createElement('option');
+        option.textContent = author;
+        option.value = author;
+        authorSelect.appendChild(option);
+    }
+
+    authorSelectDiv.append(authorSelect);
+}
+
+export function renderFilterButton () {
+    const filterButton = document.createElement('button');
+    const authorSelectDiv = document.getElementById('author-select');
+
+    filterButton.textContent = 'Filter';
+    filterButton.classList.add('filter-button');
+    filterButton.setAttribute('id', 'filter-button');
+    authorSelectDiv.append(filterButton);
 }
