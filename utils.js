@@ -1,5 +1,6 @@
-// import { books } from "../bookshop/books-data.js";
-import * as books from "../bookshop/books-data.js";
+// import { books } from "../bookshop/books-data-copy.json";
+// import * as books from "../bookshop/books-data.js";
+// const books = require('./bookshop/books-data-copy.json');
 
 export function findById(productArray, id) {
     for (let product of productArray) {
@@ -35,7 +36,7 @@ export function calcOrderTotal(cartArray, productArray) {
 
 // Get product inventory array from local storage or, if none, books-data; store it in a const
 
-export const getInventory = () => {
+export const getInventory = (books) => {
     // pull from local storage
     let bookInventory = localStorage.getItem('BOOKS');
 
