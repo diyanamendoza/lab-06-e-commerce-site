@@ -9,7 +9,7 @@ let authorSelect = document.querySelector('select').value;
 const filterButton = document.getElementById('filter-button');
 
 const productsContainer = document.getElementById('products-container');
-const currentInventory = getInventory(books);
+const currentInventory = getInventory();
 
 displayAll();
 
