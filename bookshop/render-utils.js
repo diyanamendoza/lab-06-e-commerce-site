@@ -53,6 +53,7 @@ export function renderAuthorSelect () {
     const authorSelectDiv = document.getElementById('author-select');
     const authorSelect = document.createElement('select');
     const inventory = getInventory();
+    console.log(inventory);
 
     let authorArray = [];
     for (let item of inventory) {
