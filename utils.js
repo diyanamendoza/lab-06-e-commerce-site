@@ -1,5 +1,6 @@
-import { books } from "../bookshop/books-data.js";
 
+// import { books } from "../bookshop/books-data.js";
+import * as books from "../bookshop/books-data.js";
 
 export function findById(productArray, id) {
     for (let product of productArray) {
