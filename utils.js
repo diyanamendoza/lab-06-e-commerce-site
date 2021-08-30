@@ -1,5 +1,5 @@
 // import { books } from "../bookshop/books-data-copy.json";
-import * as books from "./bookshop/books-data.js";
+import { books } from "./bookshop/books-data.js";
 // const books = require('./bookshop/books-data-copy.json');
 
 export function findById(productArray, id) {
