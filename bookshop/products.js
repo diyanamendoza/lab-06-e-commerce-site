@@ -1,5 +1,5 @@
 import { findById, findByKey, getInventory } from '../utils.js';
-// import { books } from './books-data.js';
+import { books } from './books-data.js';
 import { renderAuthorSelect, renderBooks, renderFilterButton } from './render-utils.js';
 
 renderAuthorSelect();
